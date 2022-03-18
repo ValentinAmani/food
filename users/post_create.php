@@ -15,10 +15,6 @@ if (isset($_POST['full_name']) || isset($_POST['email']) || isset($_POST['age'])
     $errorMessage = "Vos informations ne sont pas valides.";
 
     if (!empty($fullName) && !empty($email) && !empty($age) && !empty($password)) {
-    /*((strlen($fullName) >= 3) && 
-        is_numeric($age) && is_int($age) && ((int)$age >= 18) && 
-        (strlen($password) >= 3) && (strlen($password) <= 12))*/
-
             // Fais l'insertion en base
             $insertUserStatement = $db->prepare('INSERT INTO users (full_name, email, age, password) 
                                                 VALUES (:full_name, :email, :age, :password)');
@@ -29,12 +25,6 @@ if (isset($_POST['full_name']) || isset($_POST['email']) || isset($_POST['age'])
                 'password' => $password
             ]);
     }
-    /*else {
-        $validPost = (strlen($fullName) >= 3) && 
-            is_numeric($age) && is_int($age) && ((int)$age >= 18) && 
-            (strlen($password) >= 3) && (strlen($password) <= 12);
-        $errorMessage = "Vos informations ne sont pas valides.";
-    }*/
 }
 ?>
 
