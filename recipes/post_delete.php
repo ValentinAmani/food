@@ -19,4 +19,3 @@ else {
     // Effectue une redirection vers la page d'accueil, vue que post_delete n'existe plus
     header('Location: ' . $rootUrl . '/projects/food/home.php');
 }
-?>
